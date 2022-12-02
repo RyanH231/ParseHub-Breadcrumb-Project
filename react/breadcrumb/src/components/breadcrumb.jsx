@@ -3,8 +3,6 @@ import {Link} from "react-router-dom";
 
 import "../css/breadcrumb.css"
 
-
-
 export default function Breadcrumb({content, location}) {
     return (
         <div className='flex'>

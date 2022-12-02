@@ -1,0 +1,12 @@
+{
+    "name": "breadcrumb",
+    "version": "0.1.0",
+    "scripts": {
+        "client": "cd react/breadcrumb && npm start",
+        "server": "cd server && npm start",
+        "start": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "dependencies": {
+        "http-proxy-middleware": "^2.0.6"
+    }
+}

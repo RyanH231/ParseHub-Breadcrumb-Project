@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import "../css/breadcrumb.css"
+
 
 export default function Path({path, index}) {
   
@@ -13,7 +15,7 @@ export default function Path({path, index}) {
   }
   else
   {
-    return(<div>
+    return(<div className='flex'>
         <Link to={stringPath}>{current}</Link>
       </div>)
   }

@@ -6,7 +6,7 @@ const root = require('./directories.js');
 
 const RoutePath = (subRoute) =>
 {
-    console.log("Here");
+    
 
     
 
@@ -26,18 +26,18 @@ const RoutePath = (subRoute) =>
     //While the breadcrumb list is not invalid
     while(pathIndex !== path.length)
     {
-        console.log("Here2");
+        
         //Traversing to the current directory in the breadcrumb list
         if(startingElement.children[path[pathIndex]] !== undefined)
         {
-            console.log("Here3");
+            
             startingElement = startingElement.children[path[pathIndex]];
             pathIndex++;
         }
         //Element does not exist in the list
         else
         {    
-            console.log("Here4");
+            
             foundElement = false;
             break;
         }
@@ -47,11 +47,11 @@ const RoutePath = (subRoute) =>
 
     if(foundElement === true)
     {
-        console.log("Here5");
+       
         //If the element is a directory, display its contents
         if(startingElement.type === "dir")
         {
-            console.log("Here6");
+            
             for(let key in startingElement.children)
             {
                 directoryElements.push(key);
@@ -63,7 +63,7 @@ const RoutePath = (subRoute) =>
         //Display the name of the file
         if(startingElement.type === "file")
         {
-            console.log("Here7");
+            
             fileName = "THIS IS FILE: " + path[pathIndex - 1];
             return({breadcrumbPath: path, 
                 currentElement: startingElement.type, 

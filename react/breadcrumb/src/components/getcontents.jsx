@@ -11,6 +11,7 @@ export default function GetContents() {
     const [fileContents, setFileContents] = useState([]);
     const [fileDescription, setFileDescription] = useState("");
     const [fileFlag, setFileFlag] = useState(false);
+    const [currentLocation, setCurrentLocation] = useState("");
     
     useEffect(()=>
     {
@@ -30,7 +31,7 @@ export default function GetContents() {
                 setFileFlag(true);
             }
             setPath(data.breadcrumbPath);
-            
+            setCurrentLocation(location.pathname);
         })        
     }, [location])
 
@@ -54,7 +55,7 @@ export default function GetContents() {
                     <Path key = {index} path = {path} index={index}/>
                 )}
                 {fileContents.map((file, index) => 
-                    <Breadcrumb key= {index} content = {file} location = {location.pathname}/>
+                    <Breadcrumb key= {index} content = {file} location = {currentLocation}/>
                 )}
             </div>);
     }
